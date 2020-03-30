@@ -17,7 +17,7 @@ function getDayData(){
            //现在的时间
     const today = new Date();
     //认识的时间 2019-12-01
-    const meet = new Date('2019-12-07');
+    const meet = new Date('2020-03-29');
     //计算相识到今天的天数
     const count = Math.ceil((today - meet) / 1000 / 60 / 60 / 24);
     //今天的日期格式化
@@ -100,7 +100,7 @@ async function renderTemplate(){
     // console.log(mojiData);
     // console.log(oneData);
     return new Promise((resolve,reject)=>{
-        const html = template(path.join(__dirname,'./love.html'),{
+        const html = template(path.join(__dirname,'./Sprint.html'),{
             dayData,
             mojiData,
             oneData
@@ -132,8 +132,8 @@ async function sendNodeMail(){
     // 设置电子邮件数据
     let mailOpations = {
         from: '"王艺璋"<wanyyizhang520@163.com>',
-        to: '"Ambition"<3452132350@qq.com>',
-        subject: "爱的邮件",
+        to: '"KMP"<780317879@qq.com>',
+        subject: "向前冲",
         html: html
     };
 
