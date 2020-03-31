@@ -17,7 +17,7 @@ function getDayData(){
            //现在的时间
     const today = new Date();
     //认识的时间 2019-12-01
-    const meet = new Date('2020-03-29');
+    const meet = new Date('2020-03-29'); // 日期修改
     //计算相识到今天的天数
     const count = Math.ceil((today - meet) / 1000 / 60 / 60 / 24);
     //今天的日期格式化
@@ -35,7 +35,7 @@ function getDayData(){
 //2.1 请求墨迹天气获取数据
 function getMojiData(){
     return new Promise((resolve,reject) =>{
-        request('https://tianqi.moji.com/weather/china/ningxia/yinchuan').end((err,res)=>{
+        request('https://tianqi.moji.com/weather/china/ningxia/yinchuan').end((err,res)=>{ //不同地区进入不网页这里设置是宁夏银川
             if(err) return console.log("数据请求失败，请检查路径");
             //console.log(res.text);
             //把字符串解析成HTML并可用jQuery核心选择器选择对应内容
@@ -124,16 +124,16 @@ async function sendNodeMail(){
         port: 465, //开启加密协议 ，使用465端口号
         secure: true,
         auth: {
-            user: "wanyyizhang520@163.com",//用户名
-            pass: "qaq123"//客户端授权密码
+            user: "@163.com",//用户名
+            pass: ""//客户端授权密码
         }
     });
 
     // 设置电子邮件数据
     let mailOpations = {
-        from: '"王艺璋"<wanyyizhang520@163.com>',
-        to: '"KMP"<780317879@qq.com>',
-        subject: "向前冲",
+        from: '"xxx"163邮箱',
+        to: '"收信人"收信邮箱',
+        subject: "爱的邮件",
         html: html
     };
 
@@ -148,7 +148,7 @@ async function sendNodeMail(){
 }
 sendNodeMail();
 
-//6. 定时每天 5时20分00秒发送邮件给李军燕
+//6. 定时每天 5时20分00秒发送邮件
 //创建定时任务
 // var j = schedule.scheduleJob("00 * * * * *",function(){
 //     sendNodeMail();
